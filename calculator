@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="./style.css" />
+    <style>
+      body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    margin: 0;
+  }
+  
+  .calculator {
+    width: 300px;
+    height: 350px;
+    background-color: #291b1b;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 18px solid #dedede ;
+  }
+  
+  input[type="text"] {
+    width: 95%;
+    height: 40px;
+    margin-bottom: 20px;
+    padding: 5px;
+    font-size: 18px;
+  }
+  
+  .keypad {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 5px;
+    
+  }
+  
+  button {
+    padding: 10px;
+    font-size: 16px;
+    box-shadow: 10px solid #dedede ;
+    color: rgb(8, 1, 1);
+  }
+  
+
+    </style>
+</head>
+<body>
+    <script scr="https://app.zenclass.in/sheets/v1/js/zen/suite/bundle.js"></script>
+    <!-- Calculator -->
+    <div class="calculator">
+        <input type="text" id="result" placeholder=" 0  " readonly>
+        <div class="keypad">
+          <button onclick="clearResult()" style="color:red !important">C</button>
+          <button onclick="deleteLastCharacter()">D</button>
+          <button onclick="appendCharacter('.')">.</button>
+          <button onclick="appendCharacter('*')">*</button>     
+          <button onclick="appendCharacter('7')">7</button>
+          <button onclick="appendCharacter('8')">8</button>
+          <button onclick="appendCharacter('9')">9</button>
+          <button onclick="appendCharacter('/')">/</button>
+          <button onclick="appendCharacter('4')">4</button>
+          <button onclick="appendCharacter('5')">5</button>
+          <button onclick="appendCharacter('6')">6</button>
+          <button onclick="appendCharacter('-')">-</button>
+          <button onclick="appendCharacter('1')">1</button>
+          <button onclick="appendCharacter('2')">2</button>
+          <button onclick="appendCharacter('3')">3</button>
+          <button onclick="appendCharacter('+')">+</button>
+          <button onclick="appendCharacter('0')">0</button>
+          <button onclick="appendCharacter('00')">00</button>
+          <button onclick="calculateResult()" style="background-color: blue !important;color: white;">=</button>
+        </div>
+      </div>
+      <script>
+        let result = document.getElementById('result');
+
+function appendCharacter(character) {
+  result.value += character;
+}
+
+function clearResult() {
+  result.value = '';
+}
+
+function deleteLastCharacter() {
+  result.value = result.value.slice(0, -1);
+}
+
+function calculateResult() {
+  try {
+    result.value = eval(result.value);
+  } catch (error) {
+    result.value = 'Error';
+  }
+}
+      </script>
+</body>
+</html>

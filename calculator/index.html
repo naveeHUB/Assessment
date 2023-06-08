@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculator</title>
-    <link rel="stylesheet" href="./style.css" />
     <style>
       body {
     display: flex;
@@ -18,10 +17,11 @@
   .calculator {
     width: 300px;
     height: 350px;
-    background-color: #291b1b;
+    background-color:lightblue;
     border-radius: 5px;
     padding: 10px;
     box-shadow: 18px solid #dedede ;
+    box-sizing: border-box;
   }
   
   input[type="text"] {
@@ -34,7 +34,7 @@
   
   .keypad {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4,1fr);
     grid-gap: 5px;
     
   }
@@ -73,7 +73,7 @@
           <button onclick="appendCharacter('+')">+</button>
           <button onclick="appendCharacter('0')">0</button>
           <button onclick="appendCharacter('00')">00</button>
-          <button onclick="calculateResult()" style="background-color: blue !important;color: white;">=</button>
+          <button onclick="calculateResult()" style="background-color: lightpink !important;color: white;">=</button>
         </div>
       </div>
       <script>

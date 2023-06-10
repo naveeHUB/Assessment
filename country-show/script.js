@@ -68,11 +68,7 @@ async function showWeather(lat,lng) {
       });
     
   } catch (error) {
-
-  const event = new ErrorEvent("PaymentRequest", { error });
+console.log(error)
   }
 }
-
-
-
 Countrydata();

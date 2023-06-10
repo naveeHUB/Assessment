@@ -68,7 +68,7 @@ async function showWeather(lat,lng) {
       });
     
   } catch (error) {
-    ErrorEvent("PaymentRequest")
+  const event = new ErrorEvent("PaymentRequest", { error });
   }
 }
 

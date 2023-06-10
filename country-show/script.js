@@ -40,7 +40,7 @@ async function showWeather(lat,lng) {
       const params = 'waveHeight,airTemperature';
         fetch(`https://api.stormglass.io/v2/weather/point?lat=${lat}&lng=${lng}&params=${params}`, {
         headers: {
-          'Authorization': '502307f4-07b2-11ee-92e6-0242ac130002-50230876-07b2-11ee-92e6-0242ac130002'
+          'Authorization': 'dd4aa378-07ba-11ee-8d52-0242ac130002-dd4aa3f0-07ba-11ee-8d52-0242ac130002'
           
         }
       }).then((response) => response.json()).then((jsonData) => {
@@ -68,7 +68,7 @@ async function showWeather(lat,lng) {
       });
     
   } catch (error) {
-    ErrorEvent("PaymentRequest")
+    const event = new ErrorEvent("PaymentRequest", { error });
   }
 }
 
